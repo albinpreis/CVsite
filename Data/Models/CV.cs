@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Data.Models
 {
-    internal class CV
+    public class CV
     {
         public int ID { get; set; }
-        public virtual User user { get; set; }
-        public string kompetens { get; set; }
+        public virtual User User { get; set; }
+        public string Competence { get; set; }
     }
 }
