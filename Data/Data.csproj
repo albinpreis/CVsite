@@ -58,17 +58,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Migrations\202112192140090_First.cs" />
+    <Compile Include="Migrations\202112192140090_First.designer.cs">
+      <DependentUpon>202112192140090_First.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112201013333_userbla.cs" />
+    <Compile Include="Migrations\202112201013333_userbla.designer.cs">
+      <DependentUpon>202112201013333_userbla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CV.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserCvContext.cs" />
-    <Compile Include="UserInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202112192140090_First.resx">
+      <DependentUpon>202112192140090_First.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112201013333_userbla.resx">
+      <DependentUpon>202112201013333_userbla.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -1,9 +1,7 @@
-﻿using System;
+﻿using Shared;
+using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
-using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Data;
@@ -13,27 +11,16 @@ namespace CVsite.Controllers
 {
     public class UserController : Controller
     {
-        private UserCvContext db = new UserCvContext();
-
         // GET: User
         public ActionResult Index()
         {
-            return View(db.Users.ToList());
+            return View();
         }
 
         // GET: User/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            User user = db.Users.Find(id);
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
-            return View(user);
+            return View();
         }
 
         // GET: User/Create
@@ -43,86 +30,83 @@ namespace CVsite.Controllers
         }
 
         // POST: User/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,UserName,Password,ImagePath,Address,PrivateUser,PhoneNumber,Email")] User user)
+        public ActionResult Create(UserCreateModel model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Users.Add(user);
-                db.SaveChanges();
+                using (var ctx = new ApplicationDbContext())
+                {
+                    var user = new User()
+                    {
+                        UserName = model.UserName,
+                        Password = model.Password,
+                        Address = model.Address,
+                        Email = model.Address,
+                        PhoneNumber = model.Phone,
+                        PrivateUser = model.PrivateUser
+                    };
+
+                    var filename = model.Image.FileName;
+                    var filepath = Server.MapPath("~/UploadedImages");
+                    model.Image.SaveAs(filepath + "/" + filename);
+
+                    user.ImagePath = filename;
+
+                    ctx.Users.Add(user);
+                    ctx.SaveChanges();
+                }
+
                 return RedirectToAction("Index");
             }
-
-            return View(user);
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: User/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            User user = db.Users.Find(id);
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
-            return View(user);
+            return View();
         }
 
         // POST: User/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,UserName,Password,ImagePath,Address,PrivateUser,PhoneNumber,Email")] User user)
+        public ActionResult Edit(int id, FormCollection collection)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Entry(user).State = EntityState.Modified;
-                db.SaveChanges();
+                // TODO: Add update logic here
+
                 return RedirectToAction("Index");
             }
-            return View(user);
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: User/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            User user = db.Users.Find(id);
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
-            return View(user);
+            return View();
         }
 
         // POST: User/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
         {
-            User user = db.Users.Find(id);
-            db.Users.Remove(user);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
+            try
             {
-                db.Dispose();
+                // TODO: Add delete logic here
+
+                return RedirectToAction("Index");
             }
-            base.Dispose(disposing);
+            catch
+            {
+                return View();
+            }
         }
     }
 }
