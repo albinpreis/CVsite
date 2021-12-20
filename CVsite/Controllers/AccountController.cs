@@ -152,7 +152,7 @@ namespace CVsite.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Address = model.Address, PhoneNumber = model.PhoneNumber};
+                var user = new ApplicationUser { Name = model.Name, UserName = model.Email, Email = model.Email, Address = model.Address, PhoneNumber = model.PhoneNumber};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
