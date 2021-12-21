@@ -10,12 +10,15 @@ namespace Data.Models
 {
     public class Cv
     {
-        [Key, ForeignKey("User")]
-        public string ApplicationUserId { get; set; }
+        
+        [Key, ForeignKey("ApplicationUser")] 
+        public string UserId { get; set; }
+
+        public virtual ApplicationUser ApplicationUser { get; set; }
         public string Competence { get; set; }
         public string Education { get; set; }
         public string Experience { get; set; }
-        public virtual ApplicationUser User { get; set; }
+        
         
     }
 }

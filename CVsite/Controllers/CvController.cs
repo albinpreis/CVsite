@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Data;
 using Data.Models;
+using Microsoft.AspNet.Identity;
 
 namespace CVsite.Controllers
 {
@@ -34,13 +35,15 @@ namespace CVsite.Controllers
         {
             try
             {
-                using (var ctx = new CvContext())
+                using (var ctx = new ApplicationDbContext())
                 {
+                    var currentUser = User.Identity.GetUserId();
                     var newCv = new Cv()
                     {
                         Competence = model.Competence,
                         Education = model.Education,
                         Experience = model.Experience,
+                        UserId = currentUser,
                     };
                     ctx.Cvs.Add(newCv);
                     ctx.SaveChanges();
