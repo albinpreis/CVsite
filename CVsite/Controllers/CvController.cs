@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Data;
+using Data.Models;
 
 namespace CVsite.Controllers
 {
@@ -28,11 +30,21 @@ namespace CVsite.Controllers
 
         // POST: Cv/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Cv model)
         {
             try
             {
-                // TODO: Add insert logic here
+                using (var ctx = new CvContext())
+                {
+                    var newCv = new Cv()
+                    {
+                        Competence = model.Competence,
+                        Education = model.Education,
+                        Experience = model.Experience,
+                    };
+                    ctx.Cvs.Add(newCv);
+                    ctx.SaveChanges();
+                }
 
                 return RedirectToAction("Index");
             }

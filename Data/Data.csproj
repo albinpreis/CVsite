@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="CvContext.cs" />
     <Compile Include="Migrations\202112192140090_First.cs" />
     <Compile Include="Migrations\202112192140090_First.designer.cs">
       <DependentUpon>202112192140090_First.cs</DependentUpon>
@@ -79,8 +80,20 @@
     <Compile Include="Migrations\202112211216169_blablabla.designer.cs">
       <DependentUpon>202112211216169_blablabla.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112211341554_added_cv_link.cs" />
+    <Compile Include="Migrations\202112211341554_added_cv_link.designer.cs">
+      <DependentUpon>202112211341554_added_cv_link.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112211343065_added_cv_link1.cs" />
+    <Compile Include="Migrations\202112211343065_added_cv_link1.designer.cs">
+      <DependentUpon>202112211343065_added_cv_link1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112211349386_link.cs" />
+    <Compile Include="Migrations\202112211349386_link.designer.cs">
+      <DependentUpon>202112211349386_link.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\CV.cs" />
+    <Compile Include="Models\Cv.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +115,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202112211216169_blablabla.resx">
       <DependentUpon>202112211216169_blablabla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112211341554_added_cv_link.resx">
+      <DependentUpon>202112211341554_added_cv_link.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112211343065_added_cv_link1.resx">
+      <DependentUpon>202112211343065_added_cv_link1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112211349386_link.resx">
+      <DependentUpon>202112211349386_link.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
