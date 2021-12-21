@@ -49,6 +49,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,9 +71,16 @@
     <Compile Include="Migrations\202112201344583_address.designer.cs">
       <DependentUpon>202112201344583_address.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112210938160_tog_bort_users.cs" />
+    <Compile Include="Migrations\202112210938160_tog_bort_users.designer.cs">
+      <DependentUpon>202112210938160_tog_bort_users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112211216169_blablabla.cs" />
+    <Compile Include="Migrations\202112211216169_blablabla.designer.cs">
+      <DependentUpon>202112211216169_blablabla.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CV.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +96,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202112201344583_address.resx">
       <DependentUpon>202112201344583_address.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112210938160_tog_bort_users.resx">
+      <DependentUpon>202112210938160_tog_bort_users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112211216169_blablabla.resx">
+      <DependentUpon>202112211216169_blablabla.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using System.Web;
 using Data.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -11,7 +12,6 @@ namespace Data
     public class ApplicationUser : IdentityUser
     {
         public string Address { get; set; }
-        public string ImagePath { get; set; }
         public bool PrivateAccount { get; set; }
         public string Name { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -29,9 +29,7 @@ namespace Data
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-
-        public DbSet<User> Users { get; set; }
-        public DbSet<CV> Cvs { get; set; }
+        
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

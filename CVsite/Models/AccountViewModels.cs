@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CVsite.Models
 {
@@ -90,6 +92,10 @@ namespace CVsite.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+        
+        [NotMapped]
+        [Display(Name = "Profile Picture")]
+        public HttpPostedFileBase ImagePath { get; set; }
     }
 
     public class ResetPasswordViewModel

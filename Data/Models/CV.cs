@@ -11,9 +11,8 @@ namespace Data.Models
     {
         [Key]
         public int Id { get; set; }
-        public int UserId { get; set; }
         public string Competence { get; set; }
-        public virtual User User { get; set; }
+        public virtual ApplicationUser User { get; set; }
         
     }
 }
