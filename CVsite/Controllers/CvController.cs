@@ -14,7 +14,12 @@ namespace CVsite.Controllers
         // GET: Cv
         public ActionResult Index()
         {
-            return View();
+            using (var ctx = new ApplicationDbContext())
+            {
+                var cvs = ctx.Cvs.ToList();
+                return View(cvs);
+            }
+            
         }
 
         // GET: Cv/Details/5
