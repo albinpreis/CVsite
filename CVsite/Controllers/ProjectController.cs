@@ -38,6 +38,7 @@ namespace CVsite.Controllers
         [HttpPost]
         public ActionResult Create(Project project)
         {
+            var currentUser = User.Identity.GetUserId();
             try
             {
                 using (var ctx = new ApplicationDbContext())
@@ -49,9 +50,19 @@ namespace CVsite.Controllers
                         Description = project.Description,
 
                     };
+
+                    var projectApplicationUser = new ProjectApplicationUser()
+                    {
+                        ApplicationUserId = currentUser,
+                        ProjectId = newProject.Id,
+                    };
+
+                    
                     ctx.Projects.Add(newProject);
                     ctx.SaveChanges();
-                   
+                    //ctx..Add(projectApplicationUser);
+                    //ctx.SaveChanges();
+
                 }
                 return RedirectToAction("Index");
             }
