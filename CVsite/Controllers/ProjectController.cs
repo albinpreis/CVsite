@@ -51,13 +51,6 @@ namespace CVsite.Controllers
                     };
                     ctx.Projects.Add(newProject);
                     ctx.SaveChanges();
-                    var UserProject = new ApplicationUserProject()
-                    {
-                        ApplicationUserId = User.Identity.GetUserId(),
-                        ProjectId = newProject.Id,
-                    };
-                    ctx.applicationUserProjects.Add(UserProject);
-                    ctx.SaveChanges();
                    
                 }
                 return RedirectToAction("Index");

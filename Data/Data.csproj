@@ -128,6 +128,18 @@
     <Compile Include="Migrations\202112220942500_column.designer.cs">
       <DependentUpon>202112220942500_column.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112221038036_start.cs" />
+    <Compile Include="Migrations\202112221038036_start.designer.cs">
+      <DependentUpon>202112221038036_start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112221048268_appuserproject.cs" />
+    <Compile Include="Migrations\202112221048268_appuserproject.designer.cs">
+      <DependentUpon>202112221048268_appuserproject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112221053592_start2.cs" />
+    <Compile Include="Migrations\202112221053592_start2.designer.cs">
+      <DependentUpon>202112221053592_start2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationUserProject.cs" />
     <Compile Include="Models\Cv.cs" />
@@ -189,6 +201,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202112220942500_column.resx">
       <DependentUpon>202112220942500_column.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112221038036_start.resx">
+      <DependentUpon>202112221038036_start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112221048268_appuserproject.resx">
+      <DependentUpon>202112221048268_appuserproject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112221053592_start2.resx">
+      <DependentUpon>202112221053592_start2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

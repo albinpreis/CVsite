@@ -8,13 +8,20 @@ namespace Data.Models
 {
     public class Project
     {
+        
         public int Id { get; set; }
         public string Title { get; set; }
 
         public string Description { get; set; }
+        
+        public virtual ICollection<ApplicationUser> ApplicationUsers { get; set; }
 
-        public virtual ICollection<ApplicationUserProject> ApplicationUserProjects { get; set; }
 
-       
+        public Project()
+        {
+            ApplicationUsers = new HashSet<ApplicationUser>();
+        }
+
+
     }
 }
