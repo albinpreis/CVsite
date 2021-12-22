@@ -19,6 +19,10 @@ namespace Data
         public string Name { get; set; }
         public virtual Cv Cv { get; set; }
 
+        public virtual ICollection<ApplicationUserProject> ApplicationUserProjects { get; set; }
+
+      
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -38,12 +42,19 @@ namespace Data
         }
 
         public DbSet<Cv> Cvs { get; set; }
+     
+        public DbSet<Project> Projects { get;set; }
+
+        public DbSet<ApplicationUserProject> applicationUserProjects { get; set; }
+
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
 
-        
+       
+
+
     }
 }

@@ -116,8 +116,22 @@
     <Compile Include="Migrations\202112211511459_test26.designer.cs">
       <DependentUpon>202112211511459_test26.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112220753082_test.cs" />
+    <Compile Include="Migrations\202112220753082_test.designer.cs">
+      <DependentUpon>202112220753082_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112220808374_project.cs" />
+    <Compile Include="Migrations\202112220808374_project.designer.cs">
+      <DependentUpon>202112220808374_project.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112220942500_column.cs" />
+    <Compile Include="Migrations\202112220942500_column.designer.cs">
+      <DependentUpon>202112220942500_column.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ApplicationUserProject.cs" />
     <Compile Include="Models\Cv.cs" />
+    <Compile Include="Models\Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +180,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202112211511459_test26.resx">
       <DependentUpon>202112211511459_test26.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112220753082_test.resx">
+      <DependentUpon>202112220753082_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112220808374_project.resx">
+      <DependentUpon>202112220808374_project.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112220942500_column.resx">
+      <DependentUpon>202112220942500_column.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
