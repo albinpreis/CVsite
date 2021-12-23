@@ -256,21 +256,27 @@ namespace CVsite.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ChangeInfo (ChangeInfoViewModel model)
+        public async Task<ActionResult> ChangeInfo(ChangeInfoViewModel model)
         {
-            using (var ctx = new ApplicationDbContext())
-            { 
-                var userId = User.Identity.GetUserId();
-                var aUser = await UserManager.FindByIdAsync(userId);
+            try
+            {
+                using (var ctx = new ApplicationDbContext())
+                {
+                    var userId = User.Identity.GetUserId();
+                    var aUser = await UserManager.FindByIdAsync(userId);
 
-                aUser.Name = model.Name;
-                aUser.Email = model.Email;
-                aUser.Address = model.Address;
-            
-                ctx.SaveChanges();
+                    aUser.Name = model.Name;
+                    aUser.Email = model.Email;
+                    aUser.Address = model.Address;
+
+                    ctx.SaveChanges();
+                }
+                return View(model);
             }
-            return View(model);
-        }
+            catch {
+                return View();
+            }
+            }
 
 
         //
