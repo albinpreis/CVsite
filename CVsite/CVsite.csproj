@@ -256,6 +256,7 @@
     <Content Include="Views\Cv\Index.cshtml" />
     <Content Include="Views\Project\Create.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
+    <Content Include="Views\Manage\ChangeInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

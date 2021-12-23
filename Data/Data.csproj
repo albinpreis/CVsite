@@ -59,29 +59,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\202112221706477_initial.cs" />
-    <Compile Include="Migrations\202112221706477_initial.designer.cs">
-      <DependentUpon>202112221706477_initial.cs</DependentUpon>
+    <Compile Include="Migrations\202112230840567_s.cs" />
+    <Compile Include="Migrations\202112230840567_s.designer.cs">
+      <DependentUpon>202112230840567_s.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202112221709577_hoppas.cs" />
-    <Compile Include="Migrations\202112221709577_hoppas.designer.cs">
-      <DependentUpon>202112221709577_hoppas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112221717189_pau12.cs" />
-    <Compile Include="Migrations\202112221717189_pau12.designer.cs">
-      <DependentUpon>202112221717189_pau12.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112221753538_albin.cs" />
-    <Compile Include="Migrations\202112221753538_albin.designer.cs">
-      <DependentUpon>202112221753538_albin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112221757093_albin3434.cs" />
-    <Compile Include="Migrations\202112221757093_albin3434.designer.cs">
-      <DependentUpon>202112221757093_albin3434.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112211521517_hejhej.cs" />
-    <Compile Include="Migrations\202112211521517_hejhej.designer.cs">
-      <DependentUpon>202112211521517_hejhej.cs</DependentUpon>
+    <Compile Include="Migrations\202112230843050_st.cs" />
+    <Compile Include="Migrations\202112230843050_st.designer.cs">
+      <DependentUpon>202112230843050_st.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ProjectApplicationUser.cs" />
@@ -94,23 +78,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202112221706477_initial.resx">
-      <DependentUpon>202112221706477_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202112230840567_s.resx">
+      <DependentUpon>202112230840567_s.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112221709577_hoppas.resx">
-      <DependentUpon>202112221709577_hoppas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112221717189_pau12.resx">
-      <DependentUpon>202112221717189_pau12.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112221753538_albin.resx">
-      <DependentUpon>202112221753538_albin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112221757093_albin3434.resx">
-      <DependentUpon>202112221757093_albin3434.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112211521517_hejhej.resx">
-      <DependentUpon>202112211521517_hejhej.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202112230843050_st.resx">
+      <DependentUpon>202112230843050_st.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
