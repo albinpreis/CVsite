@@ -59,69 +59,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="CvContext.cs" />
-    <Compile Include="Migrations\202112192140090_First.cs" />
-    <Compile Include="Migrations\202112192140090_First.designer.cs">
-      <DependentUpon>202112192140090_First.cs</DependentUpon>
+    <Compile Include="Migrations\202112221706477_initial.cs" />
+    <Compile Include="Migrations\202112221706477_initial.designer.cs">
+      <DependentUpon>202112221706477_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202112201013333_userbla.cs" />
-    <Compile Include="Migrations\202112201013333_userbla.designer.cs">
-      <DependentUpon>202112201013333_userbla.cs</DependentUpon>
+    <Compile Include="Migrations\202112221709577_hoppas.cs" />
+    <Compile Include="Migrations\202112221709577_hoppas.designer.cs">
+      <DependentUpon>202112221709577_hoppas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202112201344583_address.cs" />
-    <Compile Include="Migrations\202112201344583_address.designer.cs">
-      <DependentUpon>202112201344583_address.cs</DependentUpon>
+    <Compile Include="Migrations\202112221717189_pau12.cs" />
+    <Compile Include="Migrations\202112221717189_pau12.designer.cs">
+      <DependentUpon>202112221717189_pau12.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202112210938160_tog_bort_users.cs" />
-    <Compile Include="Migrations\202112210938160_tog_bort_users.designer.cs">
-      <DependentUpon>202112210938160_tog_bort_users.cs</DependentUpon>
+    <Compile Include="Migrations\202112221753538_albin.cs" />
+    <Compile Include="Migrations\202112221753538_albin.designer.cs">
+      <DependentUpon>202112221753538_albin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202112211216169_blablabla.cs" />
-    <Compile Include="Migrations\202112211216169_blablabla.designer.cs">
-      <DependentUpon>202112211216169_blablabla.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112211341554_added_cv_link.cs" />
-    <Compile Include="Migrations\202112211341554_added_cv_link.designer.cs">
-      <DependentUpon>202112211341554_added_cv_link.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112211343065_added_cv_link1.cs" />
-    <Compile Include="Migrations\202112211343065_added_cv_link1.designer.cs">
-      <DependentUpon>202112211343065_added_cv_link1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112211349386_link.cs" />
-    <Compile Include="Migrations\202112211349386_link.designer.cs">
-      <DependentUpon>202112211349386_link.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112211421360_cv-user-link.cs" />
-    <Compile Include="Migrations\202112211421360_cv-user-link.designer.cs">
-      <DependentUpon>202112211421360_cv-user-link.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112211427192_test-cv.cs" />
-    <Compile Include="Migrations\202112211427192_test-cv.designer.cs">
-      <DependentUpon>202112211427192_test-cv.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112211431049_test2.cs" />
-    <Compile Include="Migrations\202112211431049_test2.designer.cs">
-      <DependentUpon>202112211431049_test2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112211445150_test3.cs" />
-    <Compile Include="Migrations\202112211445150_test3.designer.cs">
-      <DependentUpon>202112211445150_test3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112211507078_test5.cs" />
-    <Compile Include="Migrations\202112211507078_test5.designer.cs">
-      <DependentUpon>202112211507078_test5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112211511459_test26.cs" />
-    <Compile Include="Migrations\202112211511459_test26.designer.cs">
-      <DependentUpon>202112211511459_test26.cs</DependentUpon>
+    <Compile Include="Migrations\202112221757093_albin3434.cs" />
+    <Compile Include="Migrations\202112221757093_albin3434.designer.cs">
+      <DependentUpon>202112221757093_albin3434.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202112211521517_hejhej.cs" />
     <Compile Include="Migrations\202112211521517_hejhej.designer.cs">
       <DependentUpon>202112211521517_hejhej.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ProjectApplicationUser.cs" />
     <Compile Include="Models\Cv.cs" />
+    <Compile Include="Models\Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -129,47 +94,20 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202112192140090_First.resx">
-      <DependentUpon>202112192140090_First.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202112221706477_initial.resx">
+      <DependentUpon>202112221706477_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112201013333_userbla.resx">
-      <DependentUpon>202112201013333_userbla.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202112221709577_hoppas.resx">
+      <DependentUpon>202112221709577_hoppas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112201344583_address.resx">
-      <DependentUpon>202112201344583_address.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202112221717189_pau12.resx">
+      <DependentUpon>202112221717189_pau12.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112210938160_tog_bort_users.resx">
-      <DependentUpon>202112210938160_tog_bort_users.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202112221753538_albin.resx">
+      <DependentUpon>202112221753538_albin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112211216169_blablabla.resx">
-      <DependentUpon>202112211216169_blablabla.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112211341554_added_cv_link.resx">
-      <DependentUpon>202112211341554_added_cv_link.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112211343065_added_cv_link1.resx">
-      <DependentUpon>202112211343065_added_cv_link1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112211349386_link.resx">
-      <DependentUpon>202112211349386_link.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112211421360_cv-user-link.resx">
-      <DependentUpon>202112211421360_cv-user-link.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112211427192_test-cv.resx">
-      <DependentUpon>202112211427192_test-cv.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112211431049_test2.resx">
-      <DependentUpon>202112211431049_test2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112211445150_test3.resx">
-      <DependentUpon>202112211445150_test3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112211507078_test5.resx">
-      <DependentUpon>202112211507078_test5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112211511459_test26.resx">
-      <DependentUpon>202112211511459_test26.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202112221757093_albin3434.resx">
+      <DependentUpon>202112221757093_albin3434.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202112211521517_hejhej.resx">
       <DependentUpon>202112211521517_hejhej.cs</DependentUpon>

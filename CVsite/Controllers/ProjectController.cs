@@ -1,59 +1,69 @@
-﻿using System;
+﻿using Data;
+using Data.Models;
+using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Data;
-using Data.Models;
-using Microsoft.AspNet.Identity;
 
 namespace CVsite.Controllers
 {
-    public class CvController : Controller
+    public class ProjectController : Controller
     {
-        // GET: Cv
+        // GET: Project
         public ActionResult Index()
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var cvs = ctx.Cvs.ToList();
-                return View(cvs);
+                var projects = ctx.Projects.ToList();
+                return View(projects);
             }
-            
+           
         }
 
-        // GET: Cv/Details/5
+        // GET: Project/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Cv/Create
+        // GET: Project/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Cv/Create
+        // POST: Project/Create
         [HttpPost]
-        public ActionResult Create(Cv model)
+        public ActionResult Create(Project project)
         {
+            var currentUser = User.Identity.GetUserId();
             try
             {
                 using (var ctx = new ApplicationDbContext())
                 {
-                    var currentUser = User.Identity.GetUserId();
-                    var newCv = new Cv()
-                    {
-                        Competence = model.Competence,
-                        Education = model.Education,
-                        Experience = model.Experience,
-                        UserId = currentUser,
-                    };
-                    ctx.Cvs.Add(newCv);
-                    ctx.SaveChanges();
-                }
+                    var newProject = new Project()
 
+                    {
+                        Title = project.Title,
+                        Description = project.Description,
+
+                    };
+
+                    var projectApplicationUser = new ProjectApplicationUser()
+                    {
+                        ApplicationUserId = currentUser,
+                        ProjectId = newProject.Id,
+                    };
+
+                    
+                    ctx.Projects.Add(newProject);
+                    ctx.SaveChanges();
+                    //ctx..Add(projectApplicationUser);
+                    //ctx.SaveChanges();
+
+                }
                 return RedirectToAction("Index");
             }
             catch
@@ -62,13 +72,13 @@ namespace CVsite.Controllers
             }
         }
 
-        // GET: Cv/Edit/5
+        // GET: Project/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Cv/Edit/5
+        // POST: Project/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -84,13 +94,13 @@ namespace CVsite.Controllers
             }
         }
 
-        // GET: Cv/Delete/5
+        // GET: Project/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Cv/Delete/5
+        // POST: Project/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

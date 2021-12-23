@@ -7,13 +7,13 @@ namespace Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class cvuserlink : IMigrationMetadata
+    public sealed partial class hoppas : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(cvuserlink));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(hoppas));
         
         string IMigrationMetadata.Id
         {
-            get { return "202112211421360_cv-user-link"; }
+            get { return "202112221709577_hoppas"; }
         }
         
         string IMigrationMetadata.Source
