@@ -21,10 +21,7 @@ namespace Data
 
         public virtual ICollection<Project> Projects { get; set; }
 
-        public ApplicationUser()
-        {
-            Projects = new HashSet<Project>();
-        }
+        
 
       
 
@@ -49,7 +46,9 @@ namespace Data
         public DbSet<Cv> Cvs { get; set; }
      
         public DbSet<Project> Projects { get;set; }
-        
+
+        //public DbSet<ProjectApplicationUser> ProjectApplicationUsers { get; set; }
+
 
 
         public static ApplicationDbContext Create()
@@ -66,8 +65,8 @@ namespace Data
                 .Map(m =>
                 {
                     m.ToTable("ProjectApplicationUsers");
-                    m.MapLeftKey("ApplicationUser_Id");
-                    m.MapRightKey("Project_Id");
+                    m.MapLeftKey("ApplicationUserId");
+                    m.MapRightKey("ProjectId");
                 });
         }
 
