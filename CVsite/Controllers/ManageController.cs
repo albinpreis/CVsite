@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using CVsite.Models;
+using Data;
 
 namespace CVsite.Controllers
 {
@@ -64,13 +65,17 @@ namespace CVsite.Controllers
                 : "";
 
             var userId = User.Identity.GetUserId();
+            var aUser = await UserManager.FindByIdAsync(userId);
             var model = new IndexViewModel
             {
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
                 Logins = await UserManager.GetLoginsAsync(userId),
-                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
+                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
+                Name = aUser.Name,
+                Address = aUser.Address,
+                Email = aUser.Email
             };
             return View(model);
         }
@@ -243,6 +248,30 @@ namespace CVsite.Controllers
             AddErrors(result);
             return View(model);
         }
+
+        public ActionResult ChangeInfo()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ChangeInfo (ChangeInfoViewModel model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            { 
+                var userId = User.Identity.GetUserId();
+                var aUser = await UserManager.FindByIdAsync(userId);
+
+                aUser.Name = model.Name;
+                aUser.Email = model.Email;
+                aUser.Address = model.Address;
+            
+                ctx.SaveChanges();
+            }
+            return View(model);
+        }
+
 
         //
         // GET: /Manage/SetPassword

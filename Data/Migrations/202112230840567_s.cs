@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initial : DbMigration
+    public partial class s : DbMigration
     {
         public override void Up()
         {
@@ -92,19 +92,6 @@
                 .Index(t => t.RoleId);
 
             CreateTable(
-                "dbo.ProjectApplicationUsers1",
-                c => new
-                {
-                    ApplicationUserId = c.String(nullable: false, maxLength: 128),
-                    ProjectId = c.Int(nullable: false),
-                })
-                .PrimaryKey(t => new { t.ApplicationUserId, t.ProjectId })
-                .ForeignKey("dbo.AspNetUsers", t => t.ApplicationUserId, cascadeDelete: true)
-                .ForeignKey("dbo.Projects", t => t.ProjectId, cascadeDelete: true)
-                .Index(t => t.ApplicationUserId)
-                .Index(t => t.ProjectId);
-
-            CreateTable(
                 "dbo.AspNetRoles",
                 c => new
                 {
@@ -128,12 +115,10 @@
                 .Index(t => t.ProjectId);
 
         }
-        
+
         public override void Down()
         {
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.ProjectApplicationUsers1", "ProjectId", "dbo.Projects");
-            DropForeignKey("dbo.ProjectApplicationUsers1", "ApplicationUserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.Cvs", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.ProjectApplicationUsers", "ProjectId", "dbo.AspNetUsers");
@@ -143,8 +128,6 @@
             DropIndex("dbo.ProjectApplicationUsers", new[] { "ProjectId" });
             DropIndex("dbo.ProjectApplicationUsers", new[] { "ApplicationUserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
-            DropIndex("dbo.ProjectApplicationUsers1", new[] { "ProjectId" });
-            DropIndex("dbo.ProjectApplicationUsers1", new[] { "ApplicationUserId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
@@ -153,7 +136,6 @@
             DropIndex("dbo.Cvs", new[] { "UserId" });
             DropTable("dbo.ProjectApplicationUsers");
             DropTable("dbo.AspNetRoles");
-            DropTable("dbo.ProjectApplicationUsers1");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.Projects");
             DropTable("dbo.AspNetUserLogins");
