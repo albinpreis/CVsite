@@ -19,7 +19,7 @@ namespace Data
         public string Name { get; set; }
         public virtual Cv Cv { get; set; }
 
-        public virtual ICollection<Project> Projects { get; set; }
+      
 
         
 
@@ -45,7 +45,7 @@ namespace Data
 
         public DbSet<Cv> Cvs { get; set; }
      
-        public DbSet<Project> Projects { get;set; }
+       
 
         //public DbSet<ProjectApplicationUser> ProjectApplicationUsers { get; set; }
 
@@ -56,19 +56,19 @@ namespace Data
             return new ApplicationDbContext();
         }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Project>()
-                .HasMany(p => p.ApplicationUsers)
-                .WithMany(p => p.Projects)
-                .Map(m =>
-                {
-                    m.ToTable("ProjectApplicationUsers");
-                    m.MapLeftKey("ApplicationUserId");
-                    m.MapRightKey("ProjectId");
-                });
-        }
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    base.OnModelCreating(modelBuilder);
+        //    modelBuilder.Entity<Project>()
+        //        .HasMany(p => p.ApplicationUsers)
+        //        .WithMany(p => p.Projects)
+        //        .Map(m =>
+        //        {
+        //            m.ToTable("ProjectApplicationUsers");
+        //            m.MapLeftKey("ApplicationUserId");
+        //            m.MapRightKey("ProjectId");
+        //        });
+        //}
 
 
     }

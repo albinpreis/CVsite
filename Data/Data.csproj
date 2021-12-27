@@ -72,9 +72,7 @@
       <DependentUpon>202112231418097_hejhejhej.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\ProjectApplicationUser.cs" />
     <Compile Include="Models\Cv.cs" />
-    <Compile Include="Models\Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
