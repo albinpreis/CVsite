@@ -8,6 +8,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using CVsite.Models;
 using Data;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace CVsite.Controllers
 {
@@ -260,17 +261,19 @@ namespace CVsite.Controllers
         {
             try
             {
-                using (var ctx = new ApplicationDbContext())
-                {
-                    var userId = User.Identity.GetUserId();
-                    var aUser = await UserManager.FindByIdAsync(userId);
+                var store = new UserStore<ApplicationUser>(new ApplicationDbContext());
+                var manager = new Microsoft.AspNet.Identity.UserManager<ApplicationUser>(store);
+                ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
 
-                    aUser.Name = model.Name;
-                    aUser.Email = model.Email;
-                    aUser.Address = model.Address;
+                
+                user.Name = model.Name;
+                user.Email = model.Email;
+                user.Address = model.Address;
 
-                    ctx.SaveChanges();
-                }
+                await manager.UpdateAsync(user);
+                var ctx = store.Context;
+                ctx.SaveChanges();
+
                 return View(model);
             }
             catch {
